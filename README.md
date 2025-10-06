@@ -10,14 +10,14 @@ npm install is-options
 
 ## Usage
 
-``` js
+```js
 var isOptions = require('is-options')
 
-thing('', {foo: true}) // key='', opts={foo: true}
-thing({foo: true}) // key=undefined, opts={foo: true}
-thing(Buffer.from('buf'), {foo: true}) // key=Buffer('buf'), opts={foo: true}
+thing('', { foo: true }) // key='', opts={foo: true}
+thing({ foo: true }) // key=undefined, opts={foo: true}
+thing(Buffer.from('buf'), { foo: true }) // key=Buffer('buf'), opts={foo: true}
 
-function thing (optionalKey, opts) {
+function thing(optionalKey, opts) {
   if (isOptions(optionalKey)) {
     opts = optionalKey
     optionalKey = undefined
