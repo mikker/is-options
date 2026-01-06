@@ -1,13 +1,12 @@
-const tape = require('tape')
+const test = require('brittle')
 const isOptions = require('./')
 
-tape('works', function (t) {
+test('works', function (t) {
   t.ok(isOptions({}))
-  t.notOk(isOptions(''))
-  t.notOk(isOptions(Buffer.from('hi')))
-  t.notOk(isOptions())
-  t.notOk(isOptions(null))
-  t.notOk(isOptions(42))
-  t.notOk(isOptions(undefined))
-  t.end()
+  t.absent(isOptions(''))
+  t.absent(isOptions(Buffer.from('hi')))
+  t.absent(isOptions())
+  t.absent(isOptions(null))
+  t.absent(isOptions(42))
+  t.absent(isOptions(undefined))
 })
